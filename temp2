@@ -1,0 +1,27 @@
+ {% for wrapper in wrappers %}
+        {% ifchanged wrapper.user.email %}
+            <form action="/print" method="post">
+            <input type="hidden" name="key" value="{{wrapper.key}}">
+            <input type="submit" value="{{wrapper.user}}"></form>
+            <br>
+    {% endifchanged %}
+<li>
+    <a href="/serve/{{wrapper.blob.key}}">{{wrapper.blob.filename}}</a> ({{wrapper.blob.size}})
+    <small>uploaded {{wrapper.date|date:"D d M Y g:i:s A"}}</small>
+</li>
+{% endfor %}
+
+
+
+
+
+
+    {% for wrapper in wrappers %}
+
+
+            <li>
+                <a href="/serve/{{wrapper.blob.key}}">{{wrapper.blob.filename}}</a> ({{wrapper.blob.size}})
+                <small>uploaded {{wrapper.date|date:"D d M Y g:i:s A"}}</small>
+            </li>
+    {% endfor %}
+
